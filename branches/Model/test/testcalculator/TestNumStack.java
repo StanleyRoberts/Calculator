@@ -4,10 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import calculator.EmptyStackException;
-import calculator.Entry;
-import calculator.Stack;
-import calculator.Symbol;
-
+import calculator.NumStack;
 import org.junit.Test;
 
 public class TestNumStack {
@@ -18,9 +15,9 @@ public class TestNumStack {
   public void testConstructorAndPush() {
     NumStack stack = new NumStack();
     stack.push(5);
-    stack.push(13.2);
+    stack.push((float) 13.2);
   }
-  
+
   @Test
   //Test 2
   //Tests that pop correctly pops and returns floats from the stack
@@ -30,7 +27,7 @@ public class TestNumStack {
     float value = stack.pop();
     assertEquals(7, value, 0);
   }
-  
+
   @Test
   //Test 3
   //Tests isEmpty method functions correctly
