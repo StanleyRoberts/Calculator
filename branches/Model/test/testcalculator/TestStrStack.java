@@ -5,7 +5,6 @@ import static org.junit.Assert.assertTrue;
 
 import calculator.EmptyStackException;
 import calculator.StrStack;
-import calculator.Symbol;
 
 import org.junit.Test;
 
