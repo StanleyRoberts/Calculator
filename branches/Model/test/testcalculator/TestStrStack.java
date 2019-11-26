@@ -4,39 +4,38 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import calculator.EmptyStackException;
-import calculator.OpStack;
+import calculator.StrStack;
 import calculator.Symbol;
 
 import org.junit.Test;
 
-public class TestOpStack {
+public class TestStrStack {
 
   @Test
   //Test 1
-  //Tests creating a new OpStack and pushing a Symbol to it
+  //Tests creating a new StrStack and pushing a string to it
   public void testConstructorAndPush() {
-    OpStack stack = new OpStack();
-    stack.push(Symbol.LEFT_BRACKET);
-    stack.push(Symbol.PLUS);
+    StrStack stack = new StrStack();
+    stack.push("test");
   }
 
   @Test
   //Test 2
-  //Tests that pop correctly pops and returns Symbols from the stack
+  //Tests that pop correctly pops and returns strings from the stack
   public void testPop() throws EmptyStackException {
-    OpStack stack = new OpStack();
-    stack.push(Symbol.TIMES);
-    Symbol symbol = stack.pop();
-    assertEquals(Symbol.TIMES, symbol);
+    StrStack stack = new StrStack();
+    stack.push("TestString");
+    String str = stack.pop();
+    assertEquals("TestString", str);
   }
 
   @Test
   //Test 3
   //Tests isEmpty method functions correctly
   public void testIsEmpty() throws EmptyStackException {
-    OpStack stack = new OpStack();
+    StrStack stack = new StrStack();
     assertTrue(stack.isEmpty());
-    stack.push(Symbol.RIGHT_BRACKET);
+    stack.push("Test string");
     stack.pop();
     assertTrue(stack.isEmpty());
   }
