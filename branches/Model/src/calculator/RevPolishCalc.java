@@ -9,6 +9,7 @@ public class RevPolishCalc implements Calculator {
   @Override
   public float evaluate(String str) throws InvalidException {
     Scanner scanner = new Scanner(str);
+    values = new NumStack();
     
     while (scanner.hasNext()) {
       if (scanner.hasNextFloat()) {
@@ -43,7 +44,12 @@ public class RevPolishCalc implements Calculator {
     }
     scanner.close();
     try {
-      return values.pop();
+      float val = values.pop();
+      if (values.isEmpty()) {
+        return val;
+      } else {
+        throw new InvalidException();
+      }
     } catch (EmptyStackException e) {
       throw new InvalidException();
     }
