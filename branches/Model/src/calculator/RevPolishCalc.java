@@ -2,10 +2,18 @@ package calculator;
 
 import java.util.Scanner;
 
+/**
+ * The Class RevPolishCalc evaluates strings that are in the reverse polish notation (postfix).
+ */
 public class RevPolishCalc implements Calculator {
 
-  NumStack values = new NumStack();
   
+  /** A stack of values required for processing a postfix string. */
+  private NumStack values = new NumStack();
+  
+  /* (non-Javadoc)
+   * @see calculator.Calculator#evaluate(java.lang.String)
+   */
   @Override
   public float evaluate(String str) throws InvalidException {
     Scanner scanner = new Scanner(str);

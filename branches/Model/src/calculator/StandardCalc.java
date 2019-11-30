@@ -2,10 +2,21 @@ package calculator;
 
 import java.util.Scanner;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class StandardCalc evaluates strings that are in the standard notation (infix).
+ */
 public class StandardCalc implements Calculator {
+  
+  /**  A stack of operators required for processing a infix string. */
   OpStack values;
+  
+  /** An instance of RevPolishCalc to evaluate expressions after converted to postfix. */
   RevPolishCalc rpCalc;
   
+  /* (non-Javadoc)
+   * @see calculator.Calculator#evaluate(java.lang.String)
+   */
   @Override
   public float evaluate(String str) throws InvalidException {
     String output = "";
