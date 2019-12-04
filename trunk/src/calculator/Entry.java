@@ -90,7 +90,7 @@ public class Entry {
     return string;
   }
   
-  /** TODO
+  /**
    * Gets the type of the stored value of the entry.
    *
    * @returns the type of the stored value of the entry
