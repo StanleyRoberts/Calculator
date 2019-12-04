@@ -33,9 +33,11 @@ public class RevPolishCalc implements Calculator {
               float val1 = values.pop();
               values.push(values.pop() - val1);
               break;
+            case "×":
             case "*":
               values.push(values.pop() * values.pop());
               break;
+            case "÷":
             case "/":
               float val2 = values.pop();
               values.push(values.pop() / val2);

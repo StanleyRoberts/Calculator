@@ -28,6 +28,12 @@ public class StandardCalc implements Calculator {
         output += " " + scanner.nextFloat();
       } else {
         String token = scanner.next();
+        if (token.equals("÷")) {
+          token = "/";
+        }
+        if (token.equals("×")) {
+          token = "*";
+        }
         try {
           switch (token) {
             case "(":
