@@ -6,7 +6,8 @@ package calculator;
 public enum Symbol {
   
   LEFT_BRACKET('('), RIGHT_BRACKET(')'), TIMES('*'),
-  DIVIDE('/'),PLUS('+'), MINUS('-'), INVALID('\u0000');
+  DIVIDE('/'),PLUS('+'), MINUS('-'), INVALID('\u0000'),
+  ALTTIMES('×'), ALTDIVIDE('÷');
   
   /** The character associated with the enum. */
   final char character;

@@ -54,7 +54,7 @@ public class StandardCalc implements Calculator {
               while (val1 != Symbol.LEFT_BRACKET && val1 != Symbol.PLUS
                      && val1 != Symbol.MINUS && !values.isEmpty()) {
                 val1 = values.pop();
-                if (val1 == Symbol.LEFT_BRACKET) {
+                if (val1 == Symbol.LEFT_BRACKET || val1 == Symbol.PLUS || val1 == Symbol.MINUS) {
                   values.push(val1);
                 } else {
                   output += " " + val1;
