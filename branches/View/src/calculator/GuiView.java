@@ -64,7 +64,15 @@ public class GuiView implements CalcView {
    */
   @Override
   public void addCalcObserver(Observer c) {
+    /* Calls calculate when calculate button pressed */
     calcbutton.setOnAction(new EventHandler<ActionEvent>() {
+      @Override
+      public void handle(ActionEvent event) {
+        c.tell();
+      }
+    });
+    /* Calls calculate when enter pressed while typing expression */
+    question.setOnAction(new EventHandler<ActionEvent>() {
       @Override
       public void handle(ActionEvent event) {
         c.tell();

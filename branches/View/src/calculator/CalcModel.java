@@ -57,7 +57,9 @@ public class CalcModel {
           previouscharisnum = false;
         }
       } else {
-        newstring += str.charAt(i);
+        if (str.charAt(i) != ',') {
+          newstring += str.charAt(i);
+        }
         if (Character.isDigit(str.charAt(i))) {
           previouscharisnum = true;
         }
