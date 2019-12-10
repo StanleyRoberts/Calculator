@@ -21,8 +21,12 @@ public class CalcModel {
    * @param isInfix if the string is in infix notation (false means postfix)
    * @return the result of the evaluated string
    * @throws InvalidException if the string is not a correct notation throws an InvalidException
+   * @throws ArithmeticOverflowException thrown if arithmetic overflow occurs
+   * @throws DivisionByZeroException thrown if division by zero is attempted
    */
-  public float evaluate(String str, boolean isInfix) throws InvalidException {
+  public float evaluate(String str, boolean isInfix) throws InvalidException,
+        DivisionByZeroException, ArithmeticOverflowException {
+    
     str = addSpaces(str);
     
     if (isInfix) {

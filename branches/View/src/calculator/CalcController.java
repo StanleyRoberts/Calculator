@@ -27,6 +27,10 @@ public class CalcController {
     } catch (InvalidException e) {
       view.setAnswer("Whoops! We didn't quite understand that expression. "
           + "Please make sure you are using the correct notation and try again");
+    } catch (DivisionByZeroException e) {
+      view.setAnswer("Whoops! Looks like you tried to divide by zero. Please try again");
+    } catch (ArithmeticOverflowException e) {
+      view.setAnswer("Whoops! Looks like we had an arithmetic overflow, try using smaller numbers");
     }
   }
   

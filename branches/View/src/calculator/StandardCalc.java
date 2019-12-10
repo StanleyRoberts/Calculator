@@ -18,7 +18,9 @@ public class StandardCalc implements Calculator {
    * @see calculator.Calculator#evaluate(java.lang.String)
    */
   @Override
-  public float evaluate(String str) throws InvalidException {
+  public float evaluate(String str) throws InvalidException,
+        DivisionByZeroException, ArithmeticOverflowException {
+    
     String output = "";
     Scanner scanner = new Scanner(str);
     values = new OpStack();

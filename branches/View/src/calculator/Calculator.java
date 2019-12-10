@@ -12,5 +12,6 @@ interface Calculator {
    * @return the calculated value
    * @throws InvalidException thrown when the string given is in an incorrect form
    */
-  public float evaluate(String str) throws InvalidException;
+  public float evaluate(String str) throws InvalidException,
+        DivisionByZeroException, ArithmeticOverflowException;
 }

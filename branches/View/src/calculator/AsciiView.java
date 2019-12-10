@@ -26,9 +26,9 @@ public class AsciiView implements CalcView {
   public void menu() {
     boolean quit = false;
     Scanner scanner = new Scanner(System.in);
-    System.out.println("Welcome to the calculator!\nType E to enter a expression\n"
-        + "Type P to switch to postfix\nType I to switch to infix\nType Q to quit");
-
+    help();
+    System.out.println(answer);
+    
     while (!quit) {
       String input = scanner.nextLine();
       switch (input.charAt(0)) {
@@ -52,11 +52,20 @@ public class AsciiView implements CalcView {
           answer = "Quitting...";
           break;
         default:
-          answer = "Whoops! We didn't quite understand that command.\nPlease try again.";
+          answer = "Whoops! We didn't quite understand that command.\nPlease try again"
+              + "\n(Type help for help)";
+      }
+      if (input.replaceAll("\\s+", "").toLowerCase().equals("help")) {
+        help();
       }
       System.out.println(answer);
     }
     scanner.close();
+  }
+
+  private void help() {
+    answer = "Welcome to the calculator!\nType E to enter a expression\n"
+        + "Type P to switch to postfix\nType I to switch to infix\nType Q to quit";  
   }
 
   /* (non-Javadoc)

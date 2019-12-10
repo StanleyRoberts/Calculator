@@ -40,6 +40,7 @@ public class Main extends Application {
    */
   public static void main(String[] args) throws IOException {
     CalcView v;
+    
     if (System.console() == null) {
       loader = new FXMLLoader(calculator.Main.class.getResource("GuiConfig.fxml"));
       root = loader.load();
