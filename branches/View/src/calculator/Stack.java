@@ -37,7 +37,7 @@ public class Stack {
   /**
    * Gets the size of the stack.
    *
-   * @returns the size of the stack
+   * @return the size of the stack
    */
   public int size() {
     return size;
@@ -46,7 +46,7 @@ public class Stack {
   /**
    * Pops a entry off the stack.
    *
-   * @returns The entry that was popped
+   * @return The entry that was popped
    * @throws EmptyStackException thrown if the stack is empty
    */
   public Entry pop() throws EmptyStackException {
@@ -59,7 +59,7 @@ public class Stack {
   /**
    * Returns the top entry of the stack.
    *
-   * @returns The top entry of the stack
+   * @return The top entry of the stack
    * @throws EmptyStackException thrown if the stack is empty
    */
   public Entry top() throws EmptyStackException {

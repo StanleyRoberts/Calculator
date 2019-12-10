@@ -54,8 +54,8 @@ public class Entry {
   /**
    * Gets the float value associated with the entry.
    *
+   * @return the float value associated with the entry
    * @throws BadTypeException thrown if stored value is not of type Number
-   * @returns the float value associated with the entry
    */
   public float getValue() throws BadTypeException {
     if (type != Type.NUMBER) {
@@ -67,8 +67,8 @@ public class Entry {
   /**
    * Gets the Symbol associated with the entry.
    *
+   * @return the Symbol value associated with the entry
    * @throws BadTypeException thrown if stored value is not of type Symbol
-   * @returns the Symbol value associated with the entry
    */
   public Symbol getSymbol() throws BadTypeException {
     if (type != Type.SYMBOL) {
@@ -80,8 +80,8 @@ public class Entry {
   /**
    * Gets the String value associated with the entry.
    *
+   * @return the String value associated with the entry
    * @throws BadTypeException thrown if stored value is not of type String
-   * @returns the String value associated with the entry
    */
   public String getString() throws BadTypeException {
     if (type != Type.STRING) {
@@ -93,7 +93,7 @@ public class Entry {
   /**
    * Gets the type of the stored value of the entry.
    *
-   * @returns the type of the stored value of the entry
+   * @return the type of the stored value of the entry
    */
   public Type getType() {
     return type;

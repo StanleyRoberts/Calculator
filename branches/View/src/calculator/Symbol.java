@@ -32,7 +32,7 @@ public enum Symbol {
    * Converts a string to a Symbol.
    *
    * @param str The string to convert
-   * @returns the Symbol enum
+   * @return the Symbol enum
    */
   public static Symbol valueOfChar(String str) {
     for (Symbol s : values()) {
