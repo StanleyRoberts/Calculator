@@ -15,7 +15,9 @@ public class RevPolishCalc implements Calculator {
    * @see calculator.Calculator#evaluate(java.lang.String)
    */
   @Override
-  public float evaluate(String str) throws InvalidException {
+  public float evaluate(String str) throws InvalidException,
+        DivisionByZeroException, ArithmeticOverflowException {
+    
     Scanner scanner = new Scanner(str);
     values = new NumStack();
     
@@ -40,12 +42,22 @@ public class RevPolishCalc implements Calculator {
             case "÷":
             case "/":
               float val2 = values.pop();
+              if (val2 == 0) {
+                throw new DivisionByZeroException();
+              }
               values.push(values.pop() / val2);
               break;
             default:
               scanner.close();
               throw new InvalidException();
           }
+          
+          float check = values.pop();
+          if (check == Float.NEGATIVE_INFINITY || check == Float.POSITIVE_INFINITY) {
+            throw new ArithmeticOverflowException();
+          }
+          values.push(check);
+          
         } catch (EmptyStackException e) {
           scanner.close();
           throw new InvalidException();

@@ -6,7 +6,8 @@ package calculator;
 public enum Symbol {
   
   LEFT_BRACKET('('), RIGHT_BRACKET(')'), TIMES('*'),
-  DIVIDE('/'),PLUS('+'), MINUS('-'), INVALID('\u0000');
+  DIVIDE('/'),PLUS('+'), MINUS('-'), INVALID('\u0000'),
+  ALTTIMES('×'), ALTDIVIDE('÷');
   
   /** The character associated with the enum. */
   final char character;
@@ -31,7 +32,7 @@ public enum Symbol {
    * Converts a string to a Symbol.
    *
    * @param str The string to convert
-   * @returns the Symbol enum
+   * @return the Symbol enum
    */
   public static Symbol valueOfChar(String str) {
     for (Symbol s : values()) {
