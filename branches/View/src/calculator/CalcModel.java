@@ -14,6 +14,9 @@ public class CalcModel {
   /** The infix calculator implementation. */
   private StandardCalc infix = new StandardCalc();
   
+  /** Stores previous answer. */
+  private Float prevAnswer = null;
+  
   /**
    * Evaluates a string, in either postfix or infix notation, and returns the result.
    *
@@ -30,9 +33,9 @@ public class CalcModel {
     str = addSpaces(str);
     
     if (isInfix) {
-      return infix.evaluate(str);
+      return prevAnswer = infix.evaluate(str);
     } else {
-      return postfix.evaluate(str);
+      return prevAnswer = postfix.evaluate(str);
     }
   }
   
@@ -57,7 +60,10 @@ public class CalcModel {
           previouscharisnum = false;
         }
       } else {
-        if (str.charAt(i) != ',') {
+        if (str.charAt(i) == '?') {
+          newstring += " " + prevAnswer + " ";
+          previouscharisnum = true;
+        } else if (str.charAt(i) != ',') {
           newstring += str.charAt(i);
         }
         if (Character.isDigit(str.charAt(i))) {

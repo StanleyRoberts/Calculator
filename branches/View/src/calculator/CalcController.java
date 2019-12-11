@@ -23,7 +23,8 @@ public class CalcController {
    */
   private void calculate() {
     try {
-      view.setAnswer(Float.toString(model.evaluate(view.getExpression(), isInfix)));
+      view.setAnswer(view.getExpression() + " = "
+            + Float.toString(model.evaluate(view.getExpression(), isInfix)));
     } catch (InvalidException e) {
       view.setAnswer("Whoops! We didn't quite understand that expression. "
           + "Please make sure you are using the correct notation and try again");

@@ -69,6 +69,7 @@ public class GuiView implements CalcView {
       @Override
       public void handle(ActionEvent event) {
         c.tell();
+        question.setText("");
       }
     });
     /* Calls calculate when enter pressed while typing expression */
@@ -76,6 +77,7 @@ public class GuiView implements CalcView {
       @Override
       public void handle(ActionEvent event) {
         c.tell();
+        question.setText("");
       }
     });
   }
